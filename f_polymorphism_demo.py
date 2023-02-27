@@ -2,30 +2,31 @@
 
 import f_animals as animals
 
+
 def main():
     # Create a Mammal object, a Dog object, and
     # a Cat object.
-    mammal = animals.Mammal('regular animal')
+    mammal = animals.Mammal("regular animal")
     dog = animals.Dog()
     cat = animals.Cat()
-
+    animal_list = [mammal, dog, cat]
 
     # Display information about each one.
-    print('Here are some animals and')
-    print('the sounds they make.')
-    print('--------------------------')
-    mammal.show_species()
-    mammal.make_sound()
+    print("Here are some animals and")
+    print("the sounds they make.")
+    print("--------------------------")
+    for each in animal_list:
+        animal_passing(each)
+        print()
 
-    print()
 
-    dog.show_species()
-    dog.make_sound()
+def animal_passing(animal):
+    if isinstance(animal, animals.Mammal):
+        animal.show_species()
+        animal.make_sound()
+    else:
+        print(f"{animal} is not a mammal object")
 
-    print()
-
-    cat.show_species()
-    cat.make_sound()
 
 # Call the main function.
 main()
